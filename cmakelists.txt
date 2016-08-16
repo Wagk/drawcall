@@ -4,7 +4,6 @@ set(PROJECT_NAME Drawcall)
 
 project(${PROJECT_NAME})
 
-add_executable(${PROJECT_NAME} src/main.cpp)
-
-include_directories(${PROJECT_NAME} includes/)
+add_subdirectory(src/drawcall)
+add_subdirectory(src/testapp)
 

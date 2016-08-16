@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.0)
+
+find_library(DRAWCALL_LIB NAMES Drawcall_API)
+
+add_executable(Testapp main.cpp)
+target_link_libraries(${PROJECT_NAME} DRAWCALL_LIB)
+
+include_directories(${PROJECT_SOURCE_DIR}/includes/testapp)
