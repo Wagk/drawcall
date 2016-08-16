@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.0)
+
+project(${PROJECT_NAME}_API)
+
+add_library(drawcall STATIC drawcall.cpp)
+
+include_directories(${PROJECT_SOURCE_DIR}/includes)
+
+install(TARGETS drawcall DESTINATION lib)
+install(FILES drawcall.h DESTINATION include)

@@ -2,8 +2,17 @@ cmake_minimum_required(VERSION 3.0)
 
 set(PROJECT_NAME Drawcall)
 
+#naming the drawcall api
 project(${PROJECT_NAME})
 
-add_subdirectory(src/drawcall)
-add_subdirectory(src/testapp)
+#this is where the drawcall api actually goes
+add_subdirectory(src)
 
+#find_library(DRAWCALL_LIB NAMES drawcall)
+
+add_executable(Testapp testapp/main.cpp)
+target_link_libraries(Testapp drawcall)
+
+include_directories(${PROJECT_SOURCE_DIR}/includes)
+
+install(TARGETS Testapp DESTINATION bin)
