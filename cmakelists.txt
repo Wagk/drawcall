@@ -6,13 +6,13 @@ set(PROJECT_NAME Drawcall)
 project(${PROJECT_NAME})
 
 #this is where the drawcall api actually goes
-add_subdirectory(src)
+add_subdirectory(${PROJECT_SOURCE_DIR}/src)
 
 #find_library(DRAWCALL_LIB NAMES drawcall)
 
-add_executable(Testapp testapp/main.cpp)
-target_link_libraries(Testapp drawcall)
+add_executable(testapp testapp/main.cpp)
+target_link_libraries(testapp drawcall_lib)
 
-include_directories(${PROJECT_SOURCE_DIR}/includes)
 
-install(TARGETS Testapp DESTINATION bin)
+
+install(TARGETS testapp DESTINATION bin)
